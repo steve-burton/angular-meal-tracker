@@ -21,6 +21,7 @@ export class AppComponent {
   masterMealList: Meal[] = [
     new Meal("Omelet", "The works!", 500),
     new Meal("Sandwich", "Tuna on rye", 350),
+    new Meal("Fruit", "Afternoon snack", 200),
     new Meal("Spaghetti", "Carbo loading", 700)
   ];
   selectedMeal = null;
