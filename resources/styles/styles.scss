@@ -1,0 +1,33 @@
+div.content-area {
+  background-image: url("../../resources/images/food-wood.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.meals-area {
+  margin: 0 5% 5% 5%;
+  padding-top: 2%;
+  .meal-list {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 15px 0 0 0;
+    padding: 5px 10px 10px 20px;
+    color: black;
+  }
+
+}
+
+div.meal-list {
+  span.calories {
+    font-size: .9em;
+    font-weight: normal;
+    margin-left: 10px;
+  }
+  p {
+    line-height: .5em;
+  }
+  button {
+    height: 25px;
+    padding: 0 10px 0 10px;
+  }
+}
