@@ -5,7 +5,7 @@
 ### By **Steve Burton**
 
 ### Specifications
-This project will create a meal tracking application where users can log and track the foods they've eaten with details including the number of calories.
+This project will create a meal tracking application where users can log and track the foods they've eaten with details including the number of calories. Application can sort by high-calorie foods and displays a "thumbs-up" for low calorie foods.
 
 
 ## Setup/Installation Requirements
