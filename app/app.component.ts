@@ -7,7 +7,9 @@ import { Meal } from './meal.model';
   <div class="container">
     <h1>Meal Tracker</h1>
 
-    <meal-list [childMealList]="masterMealList"></meal-list>
+    <meal-list [childMealList]="masterMealList" (editClickSender)="editMeal($event)"></meal-list>
+
+    <edit-meal [childSelectedMeal]="selectedMeal" (doneButtonClickedSender)="finishedEditing()"></edit-meal>
 
   </div>
   `
@@ -19,4 +21,13 @@ export class AppComponent {
     new Meal("Sandwich", "Tuna on rye", 350),
     new Meal("Spaghetti", "Carbo loading", 700)
   ];
+  selectedMeal = null;
+
+  editMeal(clickedMeal) {
+    this.selectedMeal = clickedMeal;
+  }
+
+  finishedEditing() {
+    this.selectedMeal = null;
+  }
 }
