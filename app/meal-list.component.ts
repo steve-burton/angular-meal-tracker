@@ -10,6 +10,7 @@ import { Meal } from './meal.model';
       <option value= 500>High calorie</option>
     </select>
     <div class="meal-list" *ngFor="let currentMeal of childMealList | calories:filterByCalories">
+    <img *ngIf="showThumbs(currentMeal)" src="../resources/images/thumbs-up.png">
       <h4>Name: {{currentMeal.name}} <span class="calories">{{currentMeal.calories}} calories</span></h4>
       <p>Details: {{currentMeal.details}}</p>
       <button class="btn btn-default" (click)="editMealButtonClicked(currentMeal)">Edit meal</button>
@@ -23,6 +24,12 @@ export class MealListComponent {
   @Output() editClickSender = new EventEmitter();
 
   filterByCalories: number = 0;
+
+  showThumbs(currentMeal) {
+    if (currentMeal.calories < 400) {
+      return true;
+    }
+  }
 
   caloriesChange(optionFromMenu) {
     this.filterByCalories = optionFromMenu;
