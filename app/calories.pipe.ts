@@ -16,14 +16,6 @@ export class CaloriesPipe implements PipeTransform {
           output.push(input[i]);
         }
       }
-    //   return output;
-    // }
-    // if(filterByCalories <= 200){
-    // for (var i = 0; i < input.length; i++) {
-    //     if(input[i].calories <= 200) {
-    //       output.push(input[i]);
-    //     }
-    //   }
       return output;
     }  else {
       return input;
