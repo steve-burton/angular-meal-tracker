@@ -30,7 +30,7 @@ export class NewMealComponent {
     if(name === "") {
       return alert("Please enter the name of your meal.");
     }
-    if(calories === NaN || calories === ""){
+    if(calories === NaN || calories === "") {
       return alert("Please enter the number of calories.");
     }
     var newMealToAdd: Meal = new Meal(name, details, calories);
