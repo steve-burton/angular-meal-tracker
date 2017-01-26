@@ -16,7 +16,7 @@ import { Meal } from './meal.model';
     </div>
     <div class="form-group">
       <label>Calories:</label>
-      <input type="number" #newCalories class="form-control">
+      <input type="number" #newCalories class="form-control" required>
     </div>
     <button class="btn btn-default" (click)="submitForm(newName.value, newDetails.value, newCalories.value); newName.value=''; newDetails.value=''; newCalories.value='';">Add meal</button>
   </div><br>
@@ -26,12 +26,12 @@ import { Meal } from './meal.model';
 export class NewMealComponent {
   @Output() newMealSender = new EventEmitter();
 
-  submitForm(name: string, details: string, calories: number) {
+  submitForm(name: string, details: string, calories) {
     if(name === "") {
       return alert("Please enter the name of your meal.");
     }
-    if(calories !== NaN) {
-      return alert("Please enter the number of calories.")
+    if(calories === NaN || calories === "" ){
+      return alert("Please enter the number of calories.");
     }
     var newMealToAdd: Meal = new Meal(name, details, calories);
     this.newMealSender.emit(newMealToAdd);
